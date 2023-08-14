@@ -1,0 +1,78 @@
+.sidebar {
+  margin: 0;
+  padding: 0;
+  background-color: #0c0e15;
+  position: fixed;
+  height: 100%;
+  width: 200px;
+  overflow: auto;
+}
+.sidebar div {
+  background: url("../../Assets/imgs/fundo.jpg");
+  background-color: #0c0e15;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 150px;
+
+  padding-top: 20px;
+}
+
+.sidebar div img {
+  width: 113px;
+  height: 113px;
+  display: block;
+  margin: auto;
+  border-radius: 50%;
+  object-fit: cover;
+  filter: drop-shadow(8px 8px 10px #121212);
+  -webkit-filter: drop-shadow(8px 8px 10px #121212);
+}
+
+.sidebar a {
+  display: block;
+  padding: 16px;
+  display: flex;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.7);
+  align-items: center;
+  transition: ease-in-out 0.4s;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+}
+.sidebar a svg {
+  margin-right: 1rem;
+}
+
+.sidebar a:hover {
+  background-color: #272f60;
+  color: #fff;
+}
+
+.content {
+  margin-left: 200px;
+  padding: 1px 16px;
+}
+
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  div.content {
+    margin-left: 0;
+  }
+  .sidebar a {
+    float: left;
+  }
+  .sidebar div {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .sidebar svg {
+    display: none;
+  }
+}

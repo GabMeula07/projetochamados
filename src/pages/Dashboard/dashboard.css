@@ -1,0 +1,182 @@
+.new {
+  float: right;
+  margin-bottom: 1.5em;
+  background-color: #44b064;
+  padding: 0.5em;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0;
+  font-family: "Montserrat";
+  font-weight: 600;
+  color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+.new svg {
+  margin-right: 5px;
+}
+
+.new:hover {
+  background-color: #06e449;
+  transform: scale(1.1);
+}
+
+.dashboard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+table {
+  border: 1px solid #ccc;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+}
+
+table caption {
+  font-size: 1em;
+  margin: 0.5em 0 0.75em 0;
+}
+
+table tr {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  padding: 0.35em;
+}
+table th,
+table td {
+  font-size: 0.9em;
+  padding: 0.62em;
+  text-align: center;
+}
+
+table th {
+  font-size: 0.85em;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+table td .action {
+  border: 0;
+  padding: 5px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-right: 3px;
+  color: #1fb8da;
+}
+
+table td .action svgv {
+  vertical-align: middle;
+}
+
+table td .badge {
+  font-family: "Montserrat", sans-serif;
+
+  padding: 4px;
+  border-radius: 3px;
+  color: #fff;
+}
+.dashboard span {
+  margin: 2em 0;
+  font-size: 1.2em;
+  font-weight: 700;
+}
+
+.btn-more {
+  margin: 1.5em 0;
+  padding: 0.5em 1em;
+  background-color: #1c2654;
+  border: 0;
+  border-radius: 5px;
+  font-size: 1.1em;
+  color: #ffffff;
+  font-weight: 600;
+  font-family: "Montserrat";
+}
+.loader {
+  margin-top: 1.5em;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  position: relative;
+  animation: rotate 1s linear infinite;
+}
+.loader::before,
+.loader::after {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  inset: 0px;
+  border-radius: 50%;
+  border: 5px solid #140a6c;
+  animation: prixClipFix 2s linear infinite;
+}
+.loader::after {
+  transform: rotate3d(90, 90, 0, 180deg);
+  border-color: #415fe3;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes prixClipFix {
+  0% {
+    clip-path: polygon(50% 50%, 0 0, 0 0, 0 0, 0 0, 0 0);
+  }
+  50% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 0, 100% 0, 100% 0);
+  }
+  75%,
+  100% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 100%);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  table {
+    border: 0;
+  }
+  table caption {
+    font-size: 1.3em;
+  }
+  table thead {
+    border: none;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  table tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: 0.6em;
+  }
+  table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: 0.8em;
+    text-align: right;
+  }
+  table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+}
